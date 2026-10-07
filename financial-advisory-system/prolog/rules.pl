@@ -123,7 +123,7 @@ advice(Client, _{text: Text, reason: Reason}) :-
     (   get_dict(risk, Client, low)
     ;   get_dict(horizon, Client, Horizon), Horizon < 5
     ),
-    Text = "Prioritize capital preservation using short-term bonds, certificates of deposit (CDs), or treasury instruments.",
+    Text = "Prioritize capital preservation using fixed deposits (FDs), short-term debt funds, or sovereign treasury bills (T-Bills).",
     Reason = "A conservative risk profile or short horizon under 5 years requires limiting equity volatility to protect principal.".
 
 % Rule 9: Retirement catch-up for clients aged 40+ with low savings
@@ -140,7 +140,7 @@ advice(Client, _{text: Text, reason: Reason}) :-
 advice(Client, _{text: Text, reason: Reason}) :-
     savings_rate(Client, SR),
     SR >= 0.3,
-    Text = "Maximize tax-advantaged account limits such as 401(k), IRA, or HSA plans to optimize tax efficiency.",
+    Text = "Maximize tax-advantaged accounts such as PPF, EPF, NPS, or ELSS mutual funds to optimize tax efficiency.",
     Reason = "Your strong savings rate of 30% or more provides substantial investable cash that benefits from tax sheltering.".
 
 %!  all_advice(+Client, -AdviceList) is det.
