@@ -15,15 +15,16 @@ Prolog is the single source of truth for advice logic. The frontend only collect
 ## Repository layout
 
 ```
-/prolog
-  rules.pl        # facts, derived predicates, advice rules (pure logic, no I/O)
-  server.pl       # HTTP server, JSON handlers, input validation
-  tests.pl        # plunit tests
-/web
-  app/page.js             # form + results UI
-  app/api/advise/route.js # proxy to Prolog service
-  .env.local              # PROLOG_URL (not committed)
-AGENTS.md
+/financial-advisory-system
+  /prolog
+    rules.pl        # facts, derived predicates, advice rules (pure logic, no I/O)
+    server.pl       # HTTP server, JSON handlers, input validation
+    tests.pl        # plunit tests
+  /web
+    app/page.js             # form + results UI
+    app/api/advise/route.js # proxy to Prolog service
+    .env.local              # PROLOG_URL (not committed)
+  AGENTS.md
 ```
 
 Adjust paths above if the actual layout differs, and keep this section current.
@@ -32,11 +33,11 @@ Adjust paths above if the actual layout differs, and keep this section current.
 
 | Task | Command |
 |------|---------|
-| Start Prolog API | `cd prolog && swipl server.pl` (port 8080) |
-| Run Prolog tests | `cd prolog && swipl -g run_tests -t halt tests.pl` |
-| Start frontend | `cd web && npm run dev` (port 3000) |
-| Lint frontend | `cd web && npm run lint` |
-| Build frontend | `cd web && npm run build` |
+| Start Prolog API | `cd financial-advisory-system/prolog && swipl server.pl` (port 8080) |
+| Run Prolog tests | `cd financial-advisory-system/prolog && swipl -g run_tests -t halt tests.pl` |
+| Start frontend | `cd financial-advisory-system/web && npm run dev` (port 3000) |
+| Lint frontend | `cd financial-advisory-system/web && npm run lint` |
+| Build frontend | `cd financial-advisory-system/web && npm run build` |
 
 Before finishing any change, run the Prolog tests and the frontend lint/build for whichever side you touched.
 
