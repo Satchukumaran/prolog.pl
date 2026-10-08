@@ -144,7 +144,6 @@ advice(Client, _{text: Text, reason: Reason}) :-
     Reason = "Your strong savings rate of 30% or more provides substantial investable cash that benefits from tax sheltering.".
 
 %!  all_advice(+Client, -AdviceList) is det.
-%
 %   Collects all applicable advice for the client. If no rule matches,
 %   provides default baseline financial advice.
 all_advice(Client, AdviceList) :-
